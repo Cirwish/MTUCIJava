@@ -1,340 +1,537 @@
 - title: Аутентификация
   slug: authentication
-  description: Защита учетных данных для входа в онлайн-аккаунты
+  description: Securing your online account login credentials
   icon: password
   color: yellow
   intro: >-
-    Согласно [отчету Verizon](http://www.verizonenterprise.com/resources/reports/rp_dbir-2016-executive-summary_xg_en.pdf),
-    большинство утечек данных вызваны использованием слабых, стандартных или украденных паролей.
-    Используйте длинные, сложные и уникальные пароли, храните их в надежном менеджере паролей,
-    активируйте двухфакторную аутентификацию, отслеживайте утечки и будьте внимательны при входе в аккаунты.
+    Most reported data breaches are caused by the use of weak, default or stolen passwords
+    (according to [this Verizon report](http://www.verizonenterprise.com/resources/reports/rp_dbir-2016-executive-summary_xg_en.pdf)).
+    Use long, strong and unique passwords, manage them in a secure password manager, enable
+    2-factor authentication, keep on top of breaches and take care while logging into your accounts.
   checklist:
-  - point: Используйте надежный пароль
+  - point: Use a Strong Password
     priority: Essential
     details: >-
-      Короткие пароли или содержащие слова из словаря легко подобрать методом грубой силы.
-      Оптимальный вариант — длинная парольная фраза из нескольких слов. Проверьте надежность
-      пароля на [HowSecureIsMyPassword.net](https://howsecureismypassword.net).
+      If your password is too short, or contains dictionary words, places or names- then it can be easily
+      cracked through brute force, or guessed by someone. The easiest way to make a strong password, is by
+      making it long (12+ characters)- consider using a 'passphrase', made up of many words. Alternatively,
+      use a password generator to create a long, strong random password. Have a play with
+      [HowSecureIsMyPassword.net](https://howsecureismypassword.net), to get an idea of how quickly common
+      passwords can be cracked. Read more about creating strong passwords:
+      [securityinabox.org](https://securityinabox.org/en/passwords/passwords-and-2fa/)
 
-  - point: Не повторяйте пароли
+  - point: Don't reuse Passwords
     priority: Essential
     details: >-
-      Повторное использование паролей позволяет злоумышленникам получать доступ к другим вашим аккаунтам
-      при утечке данных на одном сайте (техника Credential Stuffing).
+      If someone was to reuse a password, and one site they had an account with suffered a leak, then a
+      criminal could easily gain unauthorized access to their other accounts. This is usually done through
+      large-scale automated login requests, and it is called Credential Stuffing. Unfortunately this is all
+      too common, but it's simple to protect against- use a different password for each of your online accounts
 
-  - point: Используйте менеджер паролей
+  - point: Use a Secure Password Manager
     priority: Essential
     details: >-
-      Менеджеры паролей вроде [Bitwarden](https://awesome-privacy.xyz/essentials/password-managers/bitwarden)
-      генерируют, хранят и автоматически заполняют учетные данные. Все данные шифруются
-      одним мастер-паролем.
+      For most people it is going to be near-impossible to remember hundreds of strong and unique passwords.
+      A password manager is an application that generates, stores and auto-fills your login credentials for you.
+      All your passwords will be encrypted against 1 master passwords (which you must remember, and it should be
+      very strong). Most password managers have browser extensions and mobile apps, so whatever device you are on,
+      your passwords can be auto-filled. A good all-rounder is
+      [Bitwarden](https://awesome-privacy.xyz/essentials/password-managers/bitwarden), or see
+      [Recommended Password Managers](https://awesome-privacy.xyz/essentials/password-managers)
 
-  - point: Не делитесь паролями
+  - point: Avoid sharing passwords
     priority: Essential
     details: >-
-      Избегайте передачи паролей. Для совместного доступа используйте функции менеджера паролей.
+      While there may be times that you need to share access to an account with another person, you should
+      generally avoid doing this because it makes it easier for the account to become compromised. If you
+      absolutely do need to share a password for example when working on a team with a shared account this
+      should be done via features built into a password manager.
 
-  - point: Включите 2FA
+  - point: Enable 2-Factor Authentication
     priority: Essential
     details: >-
-      Двухфакторная аутентификация добавляет второй уровень защиты. Используйте приложения
-      вроде Google Authenticator или аппаратные ключи безопасности.
+      2FA is where you must provide both something you know (a password) and something you have (such as a
+      code on your phone) to log in. This means that if anyone has got your password (e.g. through phishing,
+      malware or a data breach), they will not be able to log into your account. It's easy to get started,
+      download [an authenticator app](https://github.com/Lissy93/awesome-privacy#2-factor-authentication)
+      onto your phone, and then go to your account security settings and follow the steps to enable 2FA. Next
+      time you log in on a new device, you will be prompted for the code that displays in the app on your phone
+      (it works without internet, and the code usually changes every 30-seconds)
 
-  - point: Храните резервные коды
+  - point: Keep Backup Codes Safe
     priority: Essential
     details: >-
-      Резервные коды для 2FA храните в безопасном месте — на бумаге или в зашифрованном файле.
-      Не храните их в менеджере паролей.
+      When you enable multi-factor authentication, you will usually be given several codes that you can use if
+      your 2FA method is lost, broken or unavailable. Keep these codes somewhere safe to prevent loss or
+      unauthorized access. You should store these on paper or in a safe place on disk (e.g. in offline storage
+      or in an encrypted file/drive). Don't store these in your Password Manager as 2FA sources and passwords
+      and should be kept separately.
 
-  - point: Мониторинг утечек
+  - point: Sign up for Breach Alerts
     priority: Optional
     details: >-
-      Сервисы вроде [Have I Been Pwned](https://haveibeenpwned.com) уведомят, если ваши данные
-      появятся в утечках. Для доменов используйте функцию Domain-wide Notifications.
+      After a website suffers a significant data breach, the leaked data often ends up on the internet. There
+      are several websites that collect these leaked records, and allow you to search your email address to check
+      if you are in any of their lists. [Firefox Monitor](https://monitor.firefox.com), [Have I been pwned](https://haveibeenpwned.com)
+      and [DeHashed](https://dehashed.com) allow you to sign up for monitoring, where they will notify you if your
+      email address appears in any new data sets. It is useful to know as soon as possible when this happens, so
+      that you can change your passwords for the affected accounts. [Have i been pwned](https://awesome-privacy.xyz/security-tools/online-tools/have-i-been-pwned) also has domain-wide
+      notification, where you can receive alerts if any email addresses under your entire domain appear (useful if
+      you use aliases for [anonymous forwarding](https://github.com/Lissy93/awesome-privacy#anonymous-mail-forwarding))
 
-  - point: Скрывайте пароли при вводе
+  - point: Shield your Password/ PIN
     priority: Optional
     details: >-
-      При вводе паролей в публичных местах прикрывайте клавиатуру от посторонних и камер наблюдения.
+      When typing your password in public places, ensure you are not in direct line of site of a CCTV camera and
+      that no one is able to see over your shoulder. Cover your password or pin code while you type, and do not
+      reveal any plain text passwords on screen
 
-  - point: Обновляйте ключевые пароли
+  - point: Update Critical Passwords Periodically
     priority: Optional
     details: >-
-      Меняйте критически важные пароли (почта, банк) раз в год. Избегайте частой смены —
-      это провоцирует использование слабых паролей.
+      Database leaks and breaches are common, and it is likely that several of your passwords are already somewhere
+      online. Occasionally updating passwords of security-critical accounts can help mitigate this. But providing
+      that all your passwords are long, strong and unique, there is no need to do this too often- annually should be
+      sufficient. Enforcing mandatory password changes within organisations is [no longer recommended](https://duo.com/decipher/microsoft-will-no-longer-recommend-forcing-periodic-password-changes),
+      as it encourages colleagues to select weaker passwords
 
-  - point: Не сохраняйте пароли в браузере
+  - point: Don’t save your password in browsers
     priority: Optional
     details: >-
-      Браузерные хранилища паролей уязвимы. Используйте специализированные менеджеры.
+      Most modern browsers offer to save your credentials when you log into a site. Don’t allow this, as they are
+      not always encrypted, hence could allow someone to gain access into your accounts. Instead use a dedicated
+      password manager to store (and auto-fill) your passwords
 
-  - point: Избегайте входа на чужих устройствах
+  - point: Avoid logging in on someone else’s device
     priority: Optional
     details: >-
-      На чужих устройствах используйте режим инкогнито (Ctrl+Shift+N) и не сохраняйте данные.
+      Avoid logging on other people's computer, since you can't be sure their system is clean. Be especially cautious
+      of public machines, as malware and tracking is more common here. Using someone else's device is especially
+      dangerous with critical accounts like online banking. When using someone else's machine, ensure that you're in a
+      private/ incognito session (Use Ctrl+Shift+N/ Cmd+Shift+N). This will request browser to not save your credentials,
+      cookies and browsing history.
 
-  - point: Избегайте подсказок пароля
+  - point: Avoid password hints
     priority: Optional
     details: >-
-      Подсказки часто легко угадать. Используйте случайные ответы и храните их в менеджере паролей.
+      Some sites allow you to set password hints. Often it is very easy to guess answers. In cases where password hints
+      are mandatory use random answers and record them in password manager (`Name of the first school: 6D-02-8B-!a-E8-8F-81`)
 
-  - point: Ложные ответы на секретные вопросы
+  - point: Never answer online security questions truthfully
     priority: Optional
     details: >-
-      Не используйте реальные данные для ответов на вопросы безопасности. Генерируйте вымышленные ответы.
+      If a site asks security questions (such as place of birth, mother's maiden name or first car etc), don't provide
+      real answers. It is a trivial task for hackers to find out this information online or through social engineering.
+      Instead, create a fictitious answer, and store it inside your password manager. Using real-words is better than
+      random characters, [explained here](https://news.ycombinator.com/item?id=29244870)
 
-  - point: Избегайте 4-значных PIN-кодов
+  - point: Don’t use a 4-digit PIN
     priority: Optional
     details: >-
-      Используйте длинные пин-коды или буквенно-цифровые комбинации для разблокировки устройств.
+      Don’t use a short PIN to access your smartphone or computer. Instead, use a text password or much longer pin.
+      Numeric passphrases are easy crack, (A 4-digit pin has 10,000 combinations, compared to 7.4 million for a
+      4-character alpha-numeric code)
 
-  - point: Избегайте SMS для 2FA
+  - point: Avoid using SMS for 2FA
     priority: Optional
     details: >-
-      SMS уязвимы к перехвату и SIM-свопингу. Используйте приложения-аутентификаторы или аппаратные ключи.
+      When enabling multi-factor authentication, opt for app-based codes or a hardware token, if supported. SMS is
+      susceptible to a number of common threats, such as [SIM-swapping](https://www.maketecheasier.com/sim-card-hijacking)
+      and [interception](https://secure-voice.com/ss7_attacks). There's also no guarantee of how securely your phone
+      number will be stored, or what else it will be used for. From a practical point of view, SMS will only work when
+      you have signal, and can be slow. If a website or service requires the usage of a SMS number for recovery consider
+      purchasing a second pre-paid phone number only used for account recovery for these instances.
 
-  - point: Отделяйте генерацию OTP от менеджера
+  - point: Avoid using your PM to Generate OTPs
     priority: Advanced
     details: >-
-      Не используйте менеджер паролей для генерации одноразовых кодов. Это создает единую точку отказа.
+      Many password managers are also able to generate 2FA codes. It is best not to use your primary password manager
+      as your 2FA authenticator as well, since it would become a single point of failure if compromised. Instead use a
+      dedicated [authenticator app](https://github.com/Lissy93/awesome-privacy#2-factor-authentication) on your phone or laptop
 
-  - point: Избегайте разблокировки по лицу
+  - point: Avoid Face Unlock
     priority: Advanced
     details: >-
-      Распознавание лиц можно обмануть с помощью фото. Используйте пароли или длинные PIN-коды.
+      Most phones and laptops offer a facial recognition authentication feature, using the camera to compare a snapshot
+      of your face with a stored hash. It may be very convenient, but there are numerous ways to [fool it](https://www.forbes.com/sites/jvchamary/2017/09/18/security-apple-face-id-iphone-x/)
+      and gain access to the device, through digital photos and reconstructions from CCTV footage. Unlike your password-
+      there are likely photos of your face on the internet, and videos recorded by surveillance cameras
 
-  - point: Остерегайтесь кейлоггеров
+  - point: Watch out for Keyloggers
     priority: Advanced
     details: >-
-      Аппаратные кейлоггеры записывают нажатия клавиш. Проверяйте USB-порты и используйте виртуальные клавиатуры.
+      A hardware [keylogger](https://en.wikipedia.org/wiki/Hardware_keylogger) is a physical device planted between
+      your keyboard and the USB port, which intercepts all key strokes, and sometimes relays data to a remote server.
+      It gives a hacker access to everything typed, including passwords. The best way to stay protected, is just by
+      checking your USB connection after your PC has been unattended. It is also possible for keyloggers to be planted
+      inside the keyboard housing, so look for any signs that the case has been tampered with, and consider bringing your
+      own keyboard to work. Data typed on a virtual keyboard, pasted from the clipboard or auto-filled by a password
+      manager can not be intercepted by a hardware keylogger.
 
-  - point: Аппаратные ключи безопасности
+  - point: Consider a Hardware Token
     priority: Advanced
     details: >-
-      Ключи вроде [SoloKey](https://solokeys.com) обеспечивают защиту от фишинга и MITM-атак через FIDO2/U2F.
+      A U2F/ FIDO2 security key is a USB (or NFC) device that you insert while logging in to an online service, in to
+      verify your identity, instead of entering a OTP from your authenticator. [SoloKey](https://solokeys.com) and
+      [NitroKey](https://www.nitrokey.com) are examples of such keys. They bring with them several security benefits,
+      since the browser communicates directly with the device and cannot be fooled as to which host is requesting
+      authentication, because the TLS certificate is checked. [This post](https://security.stackexchange.com/a/71704) is
+      a good explanation of the security of using FIDO U2F tokens. Of course it is important to store the physical key
+      somewhere safe, or keep it on your person. Some online accounts allow for several methods of 2FA to be enabled
 
-  - point: Оффлайн-менеджеры паролей
+  - point: Consider Offline Password Manager
     priority: Advanced
     details: >-
-      KeePass и его форки (KeePassXC, StrongBox) дают полный контроль над данными, но требуют ручного резервного копирования.
+      For increased security, an encrypted offline password manager will give you full control over your data.
+      [KeePass](https://awesome-privacy.xyz/essentials/password-managers/keepass) is a popular choice, with lots of [plugins](https://[KeePass](https://awesome-privacy.xyz/essentials/password-managers/keepass).info/plugins.html) and
+      community forks with additional compatibility and functionality. Popular clients include: [KeePassXC](https://keepassxc.org)
+      (desktop), [KeePassDX](https://www.keepassdx.com) (Android) and [StrongBox](https://apps.apple.com/us/app/strongbox-password-safe/id897283731)
+      (iOS). The drawback being that it may be slightly less convenient for some, and it will be up to you to back it up,
+      and store it securely
 
-  - point: Уникальные идентификаторы
+  - point: Consider Unique Usernames
     priority: Advanced
     details: >-
-      Используйте разные почтовые алиасы и логины для каждого сервиса через анонимный переадресатор или виртуальные номера.
+      Having different passwords for each account is a good first step, but if you also use a unique username, email or
+      phone number to log in, then it will be significantly harder for anyone trying to gain unauthorised access. The easiest
+      method for multiple emails, is using auto-generated aliases for anonymous mail forwarding. This is where
+      [anything]@yourdomain.com will arrive in your inbox, allowing you to use a different email for each account (see
+      [Mail Alias Providers](https://github.com/Lissy93/awesome-privacy#anonymous-mail-forwarding)). Usernames are easier,
+      since you can use your password manager to generate, store and auto-fill these. Virtual phone numbers can be generated
+      through your VOIP provider
+  softwareLinks:
+    - title: Password Managers
+      url: https://github.com/Lissy93/awesome-privacy#password-managers
+    - title: 2-Factor Authentication
+      url: https://github.com/Lissy93/awesome-privacy#2-factor-authentication
 
-- title: Веб-серфинг
+- title: Web Browsing
   slug: web-browsing
-  description: Защита от отслеживания и сбора данных в интернете
+  description: Avoiding tracking, censorship, and data collection online
   icon: browser
-  color: emerald
   intro: >-
-    Большинство сайтов используют методы отслеживания через куки и цифровые отпечатки.
-    Этот раздел поможет минимизировать слежку и повысить приватность.
+    Most websites on the internet will use some form of tracking, often to gain
+    insight into their users behaviour and preferences. This data can be incredibly
+    detailed, and so is extremely valuable to corporations, governments and intellectual
+    property thieves. Data breaches and leaks are common, and deanonymizing users web
+    activity is often a trivial task.
+
+
+    There are two primary methods of tracking; stateful (cookie-based), and stateless
+    (fingerprint-based). Cookies are small pieces of information, stored in your browser
+    with a unique ID that is used to identify you. Browser fingerprinting is a highly
+    accurate way to identify and track users wherever they go online. The information
+    collected is quite comprehensive, and often includes browser details, OS, screen
+    resolution, supported fonts, plugins, time zone, language and font preferences,
+    and even hardware configurations.
+
+
+    This section outlines the steps you can take, to be better protected from threats,
+    minimise online tracking and improve privacy.
   checklist:
-  - point: Блокируйте рекламу
+  - point: Block Ads
     priority: Essential
     details: >-
-      Блокировщики вроде [uBlock Origin](https://awesome-privacy.xyz/networking/ad-blockers/ublock-origin)
-      останавливают трекеры и ускоряют загрузку страниц.
+      Using an ad-blocker can help improve your privacy, by blocking the trackers that ads implement.
+      [uBlock Origin](https://awesome-privacy.xyz/networking/ad-blockers/ublock-origin) is a very
+      efficient and open source browser addon,
+      developed by Raymond Hill. When 3rd-party ads are displayed on a webpage, they have the ability to
+      track you, gathering personal information about you and your habits, which can then be sold, or used
+      to show you more targeted ads, and some ads are plain malicious or fake. Blocking ads also makes pages
+      load faster, uses less data and provides a less cluttered experience.
 
-  - point: Проверяйте подлинность сайтов
+  - point: Ensure Website is Legitimate
     priority: Basic
     details: >-
-      Перед вводом данных убедитесь, что находитесь на правильном домене. Используйте закладки
-      для часто посещаемых сайтов.
+      It may sound obvious, but when you logging into any online accounts, double check the URL is correct.
+      Storing commonly visited sites in your bookmarks is a good way to ensure the URL is easy to find. When
+      visiting new websites, look for common signs that it could be unsafe: Browser warnings, redirects,
+      on-site spam and pop-ups. You can also check a website using a tool, such as:
+      [Virus Total](https://awesome-privacy.xyz/security-tools/online-tools/virus-total),
+      [IsLegitSite](https://www.islegitsite.com), [Google Safe Browsing Status](https://transparencyreport.google.com/safe-browsing/search)
+      if you are unsure.
 
-  - point: Защищайтесь от вредоносных расширений
+  - point: Watch out for Browser Malware
     priority: Basic
     details: >-
-      Удаляйте неиспользуемые расширения — они увеличивают поверхность атаки и уникальность отпечатка.
+      Your system or browser can be compromised by spyware, miners, browser hijackers, malicious redirects,
+      adware etc. You can usually stay protected, just by: ignoring pop-ups, be wary of what your clicking,
+      don't proceed to a website if your browser warns you it may be malicious. Common signs of browser malware
+      include: default search engine or homepage has been modified, toolbars, unfamiliar extensions or icons,
+      significantly more ads, errors and pages loading much slower than usual. These articles from Heimdal
+      explain [signs of browser malware](https://heimdalsecurity.com/blog/warning-signs-operating-system-infected-malware),
+      [how browsers get infected](https://heimdalsecurity.com/blog/practical-online-protection-where-malware-hides)
+      and [how to remove browser malware](https://heimdalsecurity.com/blog/malware-removal).
 
-  - point: Используйте приватные браузеры
+  - point: Use a Privacy-Respecting Browser
     priority: Essential
     details: >-
-      [Firefox](https://awesome-privacy.xyz/essentials/browsers/firefox) с настройками
-      arkenfox или [Brave](https://awesome-privacy.xyz/essentials/browsers/brave-browser)
-      лучше защищают приватность, чем Chrome/Safari.
+      [Firefox](https://awesome-privacy.xyz/essentials/browsers/firefox) (with a few tweaks)
+      and [Brave](https://awesome-privacy.xyz/essentials/browsers/brave-browser)
+      are secure, private-respecting browsers. Both are fast, open source, user-friendly and available on all
+      major operating systems. Your browser has access to everything that you do online, so if possible, avoid
+      Google Chrome, Edge and Safari as (without correct configuration) all three of them, collect usage data,
+      call home and allow for invasive tracking. Firefox requires a few changes to achieve optimal security,
+      for example - [arkenfox](https://github.com/arkenfox/user.js/wiki) or [12byte](https://12bytes.org/firefox-configuration-guide-for-privacy-freaks-and-performance-buffs/)'s
+      user.js configs. See more: [Privacy Browsers](https://github.com/Lissy93/awesome-privacy#browsers).
 
-  - point: Приватные поисковики
+  - point: Use a Private Search Engine
     priority: Essential
     details: >-
-      [DuckDuckGo](https://awesome-privacy.xyz/essentials/search-engines/duckduckgo) и
-      [Qwant](https://awesome-privacy.xyz/essentials/search-engines/qwant) не отслеживают
-      историю поиска.
+      Using a privacy-preserving, non-tracking search engine, will reduce risk that your search terms are not
+      logged, or used against you. Consider [DuckDuckGo](https://awesome-privacy.xyz/essentials/search-engines/duckduckgo),
+      or [Qwant](https://awesome-privacy.xyz/essentials/search-engines/qwant).
+      Google implements some [incredibly invasive](https://hackernoon.com/data-privacy-concerns-with-google-b946f2b7afea)
+      tracking policies, and have a history of displaying [biased search results](https://www.businessinsider.com/evidence-that-google-search-results-are-biased-2014-10).
+      Therefore Google, along with Bing, Baidu, Yahoo and Yandex are incompatible with anyone looking to protect
+      their privacy. It is recommended to update your [browsers default search](https://duckduckgo.com/install)
+      to a privacy-respecting search engine.
 
-  - point: Отключайте ненужные расширения
+  - point: Remove Unnecessary Browser Addons
     priority: Essential
     details: >-
-      Каждое расширение имеет доступ ко всем действиям в браузере. Регулярно пересматривайте список.
+      Extensions are able to see, log or modify anything you do in the browser, and some innocent looking
+      browser apps, have malicious intentions. Websites can see which extensions you have installed, and may
+      use this to enhance your fingerprint, to more accurately identify/ track you. Both [Firefox](https://awesome-privacy.xyz/essentials/browsers/firefox) and Chrome
+      web stores allow you to check what permissions/access rights an extension requires before you install it.
+      Check the reviews. Only install extensions you really need, and removed those which you haven't used in a while.
 
-  - point: Обновляйте браузер
+  - point: Keep Browser Up-to-date
     priority: Essential
     details: >-
-      Своевременные обновления закрывают уязвимости. Проверьте версию на [WhatIsMyBrowser](https://www.whatismybrowser.com/).
+      Browser vulnerabilities are constantly being [discovered](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=browser)
+      and patched, so it’s important to keep it up to date, to avoid a zero-day exploit. You can [see which browser
+      version you're using here](https://www.whatismybrowser.com/), or follow [this guide](https://www.whatismybrowser.com/guides/how-to-update-your-browser/)
+      for instructions on how to update. Some browsers will auto-update to the latest stable version.
 
-  - point: Проверяйте HTTPS
+  - point: Check for HTTPS
     priority: Essential
     details: >-
-      Не вводите данные на сайтах без HTTPS. Расширение HTTPS Everywhere теперь встроено в большинство браузеров.
+      If you enter information on a non-HTTPS website, this data is transported unencrypted and can therefore
+      be read by anyone who intercepts it. Do not enter any data on a non-HTTPS website, but also do not let
+      the green padlock give you a false sense of security, just because a website has SSL certificate, does
+      not mean that it is legitimate or trustworthy. [HTTPS-Everywhere](https://www.eff.org/https-everywhere)
+      (developed by the [EFF](https://www.eff.org/)) used to be a browser extension/addon that automatically
+      enabled HTTPS on websites, but as of 2022 is now deprecated. In their [accouncement article](https://www.eff.org/)
+      the EFF explains that most browsers now integrate such protections. Additionally, it provides instructions
+      for [Firefox](https://awesome-privacy.xyz/essentials/browsers/firefox), Chrome, Edge and Safari browsers on how to enable their HTTPS secure protections.
 
-  - point: Используйте DNS-over-HTTPS
+  - point: Use DNS-over-HTTPS
     priority: Essential
     details: >-
-      Шифруйте DNS-запросы через Cloudflare 1.1.1.1 или другие провайдеры для защиты от подмены.
+      Traditional DNS makes requests in plain text for everyone to see. It allows for eavesdropping and
+      manipulation of DNS data through man-in-the-middle attacks. Whereas DNS-over-HTTPS performs DNS
+      resolution via the HTTPS protocol, meaning data between you and your DNS resolver is encrypted.
+      A popular option is [CloudFlare](https://awesome-privacy.xyz/networking/dns-providers/cloudflare)'s [1.1.1.1](https://awesome-privacy.xyz/security-tools/mobile-apps/1.1.1.1), or compare providers- it is simple to enable in-browser.
+      Note that DoH comes with its own issues, mostly preventing web filtering.
 
-  - point: Разделяйте сессии
+  - point: Multi-[Session](https://awesome-privacy.xyz/communication/encrypted-messaging/session) Containers
     priority: Essential
     details: >-
-      Firefox Multi-Account Containers изолируют активности (работа, соцсети) для предотвращения кросс-трекинга.
+      Compartmentalisation is really important to keep different aspects of your browsing separate. For
+      example, using different profiles for work, general browsing, social media, online shopping etc
+      will reduce the number associations that data brokers can link back to you. One option is to make
+      use of [Firefox Containers](https://awesome-privacy.xyz/security-tools/browser-extensions/firefox-multi-account-containers)
+      which is designed exactly for this purpose.
+      Alternatively, you could
+      use different browsers for different tasks
+      ([Brave](https://awesome-privacy.xyz/essentials/browsers/brave-browser),
+      [Firefox](https://awesome-privacy.xyz/essentials/browsers/firefox),
+      [Tor](https://awesome-privacy.xyz/networking/mix-networks/tor) etc).
 
-  - point: Режим инкогнито
+  - point: Use Incognito
     priority: Essential
     details: >-
-      На чужих устройствах используйте приватные вкладки, чтобы не оставлять следов.
+      When using someone else's machine, ensure that you're in a private/ incognito session. This will
+      prevent browser history, cookies and some data being saved, but is not fool-proof- you can still
+      be tracked.
 
-  - point: Управляйте цифровым отпечатком
+  - point: Understand Your Browser Fingerprint
     priority: Essential
     details: >-
-      Проверьте свой браузерный отпечаток на [amiunique.org](https://amiunique.org) и минимизируйте уникальность.
+      Browser Fingerprinting is an incredibly accurate method of tracking, where a website identifies you
+      based on your device information. You can view your fingerprint at amiunique.org- The aim is to be
+      as un-unique as possible.
 
-  - point: Очищайте куки
+  - point: Manage Cookies
     priority: Essential
     details: >-
-      Регулярная очистка кук затрудняет долгосрочное отслеживание.
+      Clearing cookies regularly is one step you can take to help reduce websites from tracking you.
+      Cookies may also store your session token, which if captured, would allow someone to access your
+      accounts without credentials. To mitigate this you should clear cookies often.
 
-  - point: Блокируйте сторонние куки
+  - point: Block Third-Party Cookies
     priority: Essential
     details: >-
-      Запретите сторонним сайтам сохранять куки в настройках браузера.
+      Third-party cookies placed on your device by a website other than the one you’re visiting. This
+      poses a privacy risk, as a 3rd entity can collect data from your current session. This guide explains
+      how you can disable 3rd-party cookies, and you can check here ensure this worked.
 
-  - point: Блокируйте трекеры
+  - point: Block Third-Party Trackers
     priority: Essential
     details: >-
-      [Privacy Badger](https://awesome-privacy.xyz/security-tools/browser-extensions/privacy-badger)
-      и [uBlock Origin](https://awesome-privacy.xyz/networking/ad-blockers/ublock-origin)
-      автоматически блокируют скрытые трекеры.
+      Blocking trackers will help to stop websites, advertisers, analytics and more from tracking you in
+      the background. [Privacy Badger](https://awesome-privacy.xyz/security-tools/browser-extensions/privacy-badger),
+      [DuckDuckGo Privacy Essentials](https://awesome-privacy.xyz/security-tools/browser-extensions/privacy-essentials),
+      [uBlock Origin](https://awesome-privacy.xyz/networking/ad-blockers/ublock-origin) and uMatrix (advanced)
+      are all very effective, open source tracker-blockers available for all major browsers.
 
-  - point: Проверяйте редиректы
+  - point: Beware of Redirects
     priority: Optional
     details: >-
-      Подозрительные перенаправления могут быть частью фишинга. Проверяйте конечный URL через RedirectDetective.
+      While some redirects are harmless, others, such as Unvalidated redirects are used in phishing attacks,
+      it can make a malicious link seem legitimate. If you are unsure about a redirect URL, you can check
+      where it forwards to with a tool like RedirectDetective.
 
-  - point: Не входите в аккаунт браузера
+  - point: Do Not Sign Into Your Browser
     priority: Optional
     details: >-
-      Синхронизация истории через Google/Microsoft аккаунты увеличивает сбор данных.
+      Many browsers allow you to sign in, in order to sync history, bookmarks and other browsing data across
+      devices. However this not only allows for further data collection, but also increases attack surface
+      through providing another avenue for a malicious actor to get hold of personal information.
 
-  - point: Отключите предсказания поиска
+  - point: Disallow Prediction Services
     priority: Optional
     details: >-
-      Функции автозаполнения отправляют каждое нажатие клавиши поисковику.
+      Some browsers allow for prediction services, where you receive real-time search results or URL auto-fill.
+      If this is enabled then data is sent to Google (or your default search engine) with every keypress,
+      rather than when you hit enter.
 
-  - point: Избегайте Google Переводчик
+  - point: Avoid G Translate for Webpages
     priority: Optional
     details: >-
-      Встроенный переводчик Google имеет доступ ко всему содержимому страницы. Используйте локальные решения.
+      When you visit a web page written in a foreign language, you may be prompted to install the Google Translate
+      extension. Be aware that Google collects all data (including input fields), along with details of the current
+      user. Instead use a translation service that is not linked to your browser.
 
-  - point: Отключите веб-уведомления
+  - point: Disable Web Notifications
     priority: Optional
     details: >-
-      Уведомления от сайтов — частый вектор фишинга. Отключите их в настройках.
+      Browser push notifications are a common method for criminals to encourage you to click their link, since
+      it is easy to spoof the source. Be aware of this, and for instructions on disabling browser notifications,
+      see this article.
 
-  - point: Запретите автозагрузку файлов
+  - point: Disable Automatic Downloads
     priority: Optional
     details: >-
-      Drive-by загрузки могут заразить устройство. Требуйте подтверждение перед скачиванием.
+      Drive-by downloads is a common method of getting harmful files onto a users device. This can be mitigated
+      by disabling auto file downloads, and be cautious of websites which prompt you to download files unexpectedly.
 
-  - point: Ограничьте доступ к сенсорам
+  - point: Disallow Access to Sensors
     priority: Optional
     details: >-
-      Мобильные сайты могут запрашивать доступ к гироскопу, акселерометру без уведомления.
+      Mobile websites can tap into your device sensors without asking. If you grant these permissions to your
+      browser once, then all websites are able to use these capabilities, without permission or notification.
 
-  - point: Запретите доступ к геолокации
+  - point: Disallow Location
     priority: Optional
     details: >-
-      Отключите определение местоположения для браузера. Помните: IP тоже раскрывает локацию.
+      Location Services lets sites ask for your physical location to improve your experience. This should be
+      disabled in settings. Note that there are still other methods of determining your approximate location.
 
-  - point: Запретите доступ к камере/микрофону
+  - point: Disallow Camera/ Microphone access
     priority: Optional
     details: >-
-      Настройки браузера → Камера/Микрофон → Запретить. Используйте физические заглушки.
+      Check browser settings to ensure that no websites are granted access to webcam or microphone. It may also
+      be beneficial to use physical protection such as a webcam cover and microphone blocker.
 
-  - point: Очищайте историю форм
+  - point: Disable Browser Password Saves
     priority: Optional
     details: >-
-      Автозаполнение форм может раскрыть конфиденциальные данные. Используйте менеджер паролей.
+      Do not allow your browser to store usernames and passwords. These can be easily viewed or accessed.
+      Instead use a password manager.
 
-  - point: Защита от CSS-экфильтрации
+  - point: Disable Browser Autofill
     priority: Optional
     details: >-
-      Установите [CSS Exfil Protection](https://awesome-privacy.xyz/security-tools/browser-extensions/css-exfil-protection)
-      для блокировки кражи данных через CSS.
+      Turn off autofill for any confidential or personal details. This feature can be harmful if your browser
+      is compromised in any way. Instead, consider using your password manager's Notes feature.
 
-  - point: Отключите ActiveX
+  - point: Protect from Exfil Attack
     priority: Optional
     details: >-
-      Устаревший API представляет угрозу безопасности. Отключите в настройках IE.
+      The CSS Exfiltrate attack is a method where credentials and other sensitive details can be snagged with
+      just pure CSS. You can stay protected,
+      with the [CSS Exfil Protection](https://awesome-privacy.xyz/security-tools/browser-extensions/css-exfil-protection) plugin.
 
-  - point: Отключите WebRTC
+  - point: Deactivate ActiveX
     priority: Optional
     details: >-
-      WebRTC может раскрывать реальный IP при использовании VPN. Отключите через about:config.
+      ActiveX is a browser extension API that built into Microsoft IE, and enabled by default. It's not commonly
+      used anymore, but since it gives plugins intimate access rights, and can be dangerous, therefore you should
+      disable it.
 
-  - point: Маскируйте Canvas-отпечаток
+  - point: Disable WebRTC
     priority: Optional
     details: >-
-      Расширения вроде Canvas-Fingerprint-Blocker подменяют данные для предотвращения идентификации.
+      WebRTC allows high-quality audio/video communication and peer-to-peer file-sharing straight from the
+      browser. However it can pose as a privacy leak. To learn more, check out this guide.
 
-  - point: Смените User Agent
+  - point: Spoof HTML5 Canvas Sig
     priority: Optional
     details: >-
-      Периодически меняйте строку User Agent, чтобы уменьшить уникальность отпечатка.
+      Canvas Fingerprinting allows websites to identify and track users very accurately. You can use the
+      Canvas-Fingerprint-Blocker extension to spoof your fingerprint or
+      use [Tor](https://awesome-privacy.xyz/networking/mix-networks/tor).
 
-  - point: Игнорируйте DNT
+  - point: Spoof User Agent
     priority: Optional
     details: >-
-      Заголовок Do Not Track практически не поддерживается сайтами и может сделать вас заметнее.
+      The user agent tells the website what device, browser and version you are using. Switching user agent
+      periodically is one small step you can take to become less unique.
 
-  - point: Отключите HSTS Super Cookies
+  - point: Disregard DNT
     priority: Optional
     details: >-
-      В Chrome: chrome://net-internals/#hsts → удалите домены для очистки суперкуки.
+      Enabling Do Not Track has very limited impact, since many websites do not respect or follow this. Since
+      it is rarely used, it may also add to your signature, making you more unique.
 
-  - point: Запретите фоновые соединения
+  - point: Prevent HSTS Tracking
     priority: Optional
     details: >-
-      Отключите телеметрию и фоновые запросы браузера в настройках приватности.
+      HSTS was designed to help secure websites, but privacy concerns have been raised as it allowed site
+      operators to plant super-cookies. It can be disabled by visiting chrome://net-internals/#hsts in
+      Chromium-based browsers.
 
-  - point: Изолируйте домены
+  - point: Prevent Automatic Browser Connections
     priority: Optional
     details: >-
-      [First Party Isolation](https://awesome-privacy.xyz/security-tools/browser-extensions/first-party-isolation)
-      предотвращает кросс-доменное отслеживание.
+      Even when you are not using your browser, it may call home to report on usage activity, analytics and
+      diagnostics. You may wish to disable some of this, which can be done through the settings.
 
-  - point: Очищайте URL от трекеров
+  - point: Enable 1st-Party Isolation
+    priority: Optional
+    details: >-
+      [First Party Isolation](https://awesome-privacy.xyz/security-tools/browser-extensions/first-party-isolation) means
+      that all identifier sources and browser state are scoped using the URL bar
+      domain, this can greatly reduce tracking.
+
+  - point: Strip Tracking Params from URLs
     priority: Advanced
     details: >-
-      [ClearURLs](https://awesome-privacy.xyz/security-tools/browser-extensions/clearurls)
-      удаляет UTM-метки и другие параметры отслеживания из ссылок.
+      Websites often append additional GET parameters to URLs that you click, to identify information like
+      source/referrer. You can sanitize manually,
+      or use an extension like [ClearURLs](https://awesome-privacy.xyz/security-tools/browser-extensions/clearurls) to strip tracking data
+      from URLs automatically.
 
-  - point: Первый запуск с защитой
+  - point: First Launch Security
     priority: Advanced
     details: >-
-      При первом запуске браузера отключите интернет, настройте приватность, затем включите сеть.
+      After installing a web browser, the first time you launch it (prior to configuring its privacy settings),
+      most browsers will call home. Therefore, after installing a browser, you should first disable your internet
+      connection, then configure privacy options before reenabling your internet connectivity.
 
-  - point: Используйте Tor Browser
+  - point: Use The Tor Browser
     priority: Advanced
     details: >-
-      [Tor](https://awesome-privacy.xyz/networking/mix-networks/tor) шифрует и анонимизирует
-      трафик через несколько узлов, но снижает скорость.
+      The [Tor](https://awesome-privacy.xyz/networking/mix-networks/tor) Project provides a browser that encrypts and routes your traffic through multiple nodes, keeping
+      users safe from interception and tracking. The main drawbacks are speed and user experience.
 
-  - point: Отключите JavaScript
+  - point: Disable JavaScript
     priority: Advanced
     details: >-
-      Радикально уменьшает поверхность атаки, но ломает функциональность большинства сайтов.
-
-# Остальные разделы переводятся по аналогии, сохраняя структуру и технические термины
+      Many modern web apps are JavaScript-based, so disabling it will greatly decrease your browsing experience.
+      But if you really want to go all out, then it will really reduce your attack surface.
   softwareLinks:
     - title: Privacy Browsers
       url: https://github.com/Lissy93/awesome-privacy#browsers
